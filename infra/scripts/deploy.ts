@@ -14,7 +14,7 @@ async function main() {
   // await hre.run('compile');
 
   // We get the contract to deploy
-  const LegatoID = await ethers.getContractFactory("LegatoID");
+  const IdentityCard = await ethers.getContractFactory("IdentityCard");
   const signer = process.env.ID_SIGNER || "";
   if (!ethers.utils.isAddress(signer)) {
     console.log("------------------------");
@@ -27,11 +27,11 @@ async function main() {
     );
     console.log("------------------------");
   }
-  const lid = await LegatoID.deploy(signer);
+  const idCard = await IdentityCard.deploy(signer);
 
-  await lid.deployed();
+  await idCard.deployed();
 
-  console.log("LegatoID deployed to:", lid.address);
+  console.log("IdentityCard deployed to:", idCard.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere

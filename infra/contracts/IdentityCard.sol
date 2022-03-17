@@ -21,7 +21,7 @@ import "hardhat/console.sol";
  */
 
 // contract UniqueIdentity is ERC1155PresetPauserUpgradeable, IUniqueIdentity {
-contract LegatoID is
+contract IdentityCard is
     // IUniqueIdentity,
     Ownable,
     ReentrancyGuard,
@@ -43,6 +43,9 @@ contract LegatoID is
 
     // constructor() override(Ownable, ReentrancyGuard) {}
     constructor(address signer)
+    Ownable()
+    ReentrancyGuard()
+    AccessControl()
     ERC721("Legato ID","LID")
       {
         require(owner() != address(0), "Owner address cannot be empty");
