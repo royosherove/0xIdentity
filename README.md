@@ -1,2 +1,2 @@
-# 0xkyc
-Repository for the 0xKyc ID Protocol
+# 0xidentity
+Repository for the 0xidentity ID Protocol
