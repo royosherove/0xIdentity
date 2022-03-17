@@ -15,9 +15,17 @@ async function main() {
 
   // We get the contract to deploy
   const LegatoID = await ethers.getContractFactory("LegatoID");
-  const signer = process.env.ID_SIGNER || '';
-  if(!ethers.utils.isAddress(signer)){
+  const signer = process.env.ID_SIGNER || "";
+  if (!ethers.utils.isAddress(signer)) {
+    console.log("------------------------");
     console.log("No signer contract passed as env variable");
+    console.log(
+      `
+      try 
+      ID_SIGNER=[YourAccountAddress] npm run contracts 
+      for hardhard test deploy`
+    );
+    console.log("------------------------");
   }
   const lid = await LegatoID.deploy(signer);
 
